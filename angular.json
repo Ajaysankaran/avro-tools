@@ -22,10 +22,7 @@
             },
             "outputPath": "dist/avro-tools",
             "index": "src/index.html",
-            "polyfills": [
-              "zone.js",
-              "polyfill.js"
-            ],
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [

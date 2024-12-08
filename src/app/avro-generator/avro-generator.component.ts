@@ -29,7 +29,7 @@ export class AvroGeneratorComponent {
       reader.onload = () => {
         const content = reader.result;
         // use the content as needed
-        this.schema = avro.Type.forSchema(JSON.parse(content as string));
+        this.schema = JSON.parse(content as string);
       };
       reader.readAsText(file);
     }

@@ -1,5 +1,14 @@
-<div class="row ">
+<div class="row">
     <input class="form-control" type="file" (change)="onFileUpload($event)" />
+    @if (tableRecord().length) {
+        <div class="col-md-12 py-1">
+            Showing records from {{recordMetaData().start}} to {{recordMetaData().end}}
+            @if (!recordMetaData().done) {
+                <button class="btn btn-light ml-2" (click)="nextChunk()">Load Next Chunk</button>
+            }
+        </div>
+    }
+
     <div class="col-md-6 p-2 mt-2 border rounded">
         <p-table [value]="tableRecord()" [paginator]="true" [rows]="10" [tableStyle]="{ 'min-width': '50rem' }"
             selectionMode="single" dataKey="key" [selection]="selectedObject()" [metaKeySelection]="true"
@@ -7,6 +16,7 @@
             scrollHeight="100vh" styleClass="p-datatable-striped p-datatable-sm">
             <ng-template pTemplate="header">
                 <tr>
+                    <th>ID</th>
                     <th>Record</th>
                 </tr>
             </ng-template>
@@ -19,6 +29,6 @@
         </p-table>
     </div>
     <div class="col-md-6 p-2 mt-2 border rounded bg-body-tertiary">
-        <ngx-json-viewer [json]="selectedObject().value" [expanded]="false"></ngx-json-viewer>
+        <ngx-json-viewer [json]="selectedObject().value" [expanded]="false" (click)='triggerChangeDetection()'></ngx-json-viewer>
     </div>
 </div>

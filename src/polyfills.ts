@@ -6,14 +6,14 @@ import * as stream from 'stream'
 // import * as url from 'url'
 import * as path from 'path'
 import 'assert'
-// import * as zlib from 'zlib'
+import 'zone.js'
 
 window.process = process
 window.Buffer = buffer.Buffer
 // window.crypto = crypto
-window.util = util
-window.stream = stream
+window['util'] = util
+window['stream'] = stream
 // window.fs = fs
 // window.URL = url
-window.path = path
+window['path'] = path
 // window.zlib = zlib

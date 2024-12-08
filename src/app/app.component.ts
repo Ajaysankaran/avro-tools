@@ -13,7 +13,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
   imports: [RouterOutlet, NgxJsonViewerModule, TableModule, TabMenuModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class AppComponent implements OnInit {
   title = 'avro-tools';
