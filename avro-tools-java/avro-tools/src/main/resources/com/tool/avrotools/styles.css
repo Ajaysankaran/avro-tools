@@ -1,0 +1,95 @@
+/* General styling for the application */
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-color: #f4f4f4;
+    /*-fx-padding: 10;*/
+}
+
+/* TabPane Styling */
+.tab-pane {
+    -fx-tab-min-height: 40px;
+    -fx-tab-max-height: 40px;
+    -fx-background-color: #ffffff;
+    -fx-border-width: 0px
+}
+
+.tab-pane .tab {
+    -fx-padding: 0 10 0 10;
+    -fx-font-size: 14px
+}
+
+/*.tab-pane .tab:selected {
+    -fx-border-width: 1px 1px 0px 1px;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px 5px 0px 0px;
+    -fx-background-radius: 5px 5px 0px 0px;
+    -fx-background-color: #ffffff
+}*/
+
+/* Labels */
+.label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+    -fx-padding: 5;
+}
+
+.label-heading {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #444444;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.button:pressed {
+    -fx-background-color: #39843b;
+}
+
+/* TextFields and PasswordFields */
+.text-field,
+.password-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1;
+    -fx-border-radius: 5px;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 1);
+}
+
+.text-field:focused,
+.password-field:focused {
+    -fx-border-color: #4CAF50;
+    -fx-border-width: 2;
+}
+
+/* TableView */
+.table-view {
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1;
+    -fx-background-color: #ffffff;
+}
+
+.table-column-header {
+    -fx-background-color: #f0f0f0;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.table-cell {
+    -fx-font-size: 13px;
+    -fx-padding: 10;
+}

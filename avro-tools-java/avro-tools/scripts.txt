@@ -1,0 +1,9 @@
+jlink --module-path /Users/ajaysankaran/Library/Java/JavaVirtualMachines/temurin-17.0.7/Contents/Home/lib --add-modules com.tool.avrotools,javafx.controls,javafx.fxml --output custom-runtime --strip-debug --compress=2 --no-header-files --no-man-pages
+
+
+javac --module-path . -d avro-content src/module-info.java
+
+jar --create --file avro-1.12.2-modular.jar --module-version 1.12.2 -C avro-content .
+javac --module-path libs -d avro-content src/module-info.java
+
+mvn javafx:jlink

@@ -1,0 +1,8 @@
+<div class="container my-3 h-100">
+    <p-tabMenu 
+    [model]="items" 
+    [activeItem]="activeItem" 
+    (activeItemChange)="onActiveItemChange($event)" />
+<router-outlet></router-outlet>
+
+</div>

@@ -1,0 +1,142 @@
+{
+    "type": "record",
+    "name": "Record",
+    "fields": [
+        {
+            "name": "OrderID",
+            "type": [
+                "null",
+                "long"
+            ]
+        },
+        {
+            "name": "CustomerName",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        {
+            "name": "Email",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        {
+            "name": "DateOfBirth",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        {
+            "name": "CountryCode",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        {
+            "name": "StateCode",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        {
+            "name": "City",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        {
+            "name": "Postcode",
+            "type": [
+                "null",
+                "long"
+            ]
+        },
+        {
+            "name": "Address",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        {
+            "name": "IPAddress",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        {
+            "name": "Product",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        {
+            "name": "ProductCategory",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        {
+            "name": "SKU",
+            "type": [
+                "null",
+                "long"
+            ]
+        },
+        {
+            "name": "Quantity",
+            "type": [
+                "null",
+                "long"
+            ]
+        },
+        {
+            "name": "Price",
+            "type": [
+                "null",
+                "double"
+            ]
+        },
+        {
+            "name": "OrderTotal",
+            "type": [
+                "null",
+                "double"
+            ]
+        },
+        {
+            "name": "OrderDate",
+            "type": [
+                "null",
+                {
+                    "type": "long",
+                    "logicalType": "timestamp-millis"
+                }
+            ]
+        },
+        {
+            "name": "OrderStatus",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        {
+            "name": "PaymentMethod",
+            "type": [
+                "null",
+                "string"
+            ]
+        }
+    ]
+}
