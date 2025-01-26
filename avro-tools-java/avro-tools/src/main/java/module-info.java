@@ -6,7 +6,7 @@ module com.tool.avrotools {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires com.fasterxml.jackson.databind;
-    requires com.tools.avro;
+    requires org.apache.avro;
 //    requires lombok;
 
     opens com.tool.avrotools to javafx.fxml;
