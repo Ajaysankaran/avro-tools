@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<!--<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea"-->
+<!--            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tool.avrotools.AvroViewerController">-->
+
+    <VBox spacing="10" style="-fx-padding: 10;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tool.avrotools.AvroViewerController">
+        <Label style="-fx-font-size: 24; -fx-font-weight: bold;" text="Avro Viewer"/>
+        <HBox spacing="10">
+            <Label text="Choose Input Source"/>
+            <RadioButton fx:id="fromFileRadioButton" text="From File"/>
+            <RadioButton fx:id="fromS3RadioButton" text="From S3"/>
+        </HBox>
+        <VBox>
+            <HBox fx:id="fileInputContainer" spacing="10" visible="false">
+                <Button onAction="#handleLoadFile" text="Load File"/>
+                <TextField fx:id="selectedFileField" editable="false" promptText="Selected file will appear here"
+                           style="-fx-min-width: 200" HBox.hgrow="ALWAYS"/>
+            </HBox>
+            <VBox fx:id="s3InputContainer" spacing="10">
+                <Label text="S3 Details"/>
+                <HBox spacing="10">
+                    <TextField fx:id="regionField" prefWidth="400.0" promptText="S3 Region" style="-fx-padding: 10"/>
+                    <TextField fx:id="accessKeyField" prefWidth="400" promptText="Access Key" style="-fx-padding: 10"/>
+                    <PasswordField fx:id="secretKeyField" prefWidth="400" promptText="Secret Key"
+                                   style="-fx-padding: 10"/>
+
+                    <TextField fx:id="bucketNameField" prefWidth="400" promptText="Bucket Name"
+                               style="-fx-padding: 10"/>
+                    <TextField fx:id="keyField" prefWidth="400" promptText="S3 Key" style="-fx-padding: 10"/>
+                </HBox>
+                <Button onAction="#handleSubmitS3" style="-fx-padding: 10" text="Submit S3 Details"/>
+            </VBox>
+        </VBox>
+        <HBox spacing="10" VBox.vgrow="ALWAYS">
+            <SplitPane VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS" dividerPositions="0.8">
+                <TableView fx:id="viewerTable" onMouseClicked="#onRowSelect" prefHeight="400.0" prefWidth="600.0"
+                           HBox.hgrow="ALWAYS" onKeyPressed="#onKeyPressed">
+                    <columns>
+                        <TableColumn fx:id="recordNoColumn" prefWidth="150.0" text="Record No"/>
+                        <TableColumn fx:id="recordColumn" prefWidth="400.0" text="Record"/>
+                    </columns>
+                </TableView>
+                <TreeView fx:id="treeView1" prefHeight="274.0" prefWidth="362.0" HBox.hgrow="ALWAYS">
+                    <VBox.margin>
+                        <Insets right="8.0" top="8.0"/>
+                    </VBox.margin>
+                </TreeView>
+            </SplitPane>
+        </HBox>
+    </VBox>
+<!--</BorderPane>-->

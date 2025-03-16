@@ -8,13 +8,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.util.Objects;
 
 public class AvroViewerController {
 
@@ -86,9 +87,10 @@ public class AvroViewerController {
         // Display the selected file in the TextField
         if (selectedFile != null) {
             selectedFileField.setText(selectedFile.getAbsolutePath());
+            treeView1.setRoot(null);
+            viewerTable.setItems(TableViewUtils.readAvroRecordsFromFile(selectedFile));
         }
 
-        viewerTable.setItems(TableViewUtils.readAvroRecordsFromFile(selectedFile));
     }
 
     @FXML
@@ -157,8 +159,21 @@ public class AvroViewerController {
 
     private void showDataInJsonView() {
         AvroData avroData = viewerTable.getSelectionModel().getSelectedItem();
-        TreeItem<String> treeItem = JSONTreeView.buildTree(avroData.getRecord());
-        treeView1.setRoot(treeItem);
-        treeView1.setShowRoot(false);
+        if (Objects.nonNull(avroData)) {
+            TreeItem<String> treeItem = JSONTreeView.buildTree(avroData.getRecord());
+            treeView1.setRoot(treeItem);
+            treeView1.setShowRoot(false);
+        }
+    }
+
+    public void onKeyPressed(KeyEvent keyEvent) {
+        if (keyEvent.isControlDown() && keyEvent.getCode() == KeyCode.C) {
+            // Copy selected record to clipboard
+            String record = viewerTable.getSelectionModel().getSelectedItem().getRecord();
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            ClipboardContent content = new ClipboardContent();
+            content.putString(record);
+            clipboard.setContent(content);
+        }
     }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tool.avrotools.HomeController"
+            stylesheets="@styles.css">
+    <!-- Placing MenuBar at the top -->
+    <top>
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem text="New Avro Viewer" onAction="#handleNew"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <TabPane fx:id="tabPane">
+            <!-- Avro Viewer Tab -->
+<!--            <Tab closable="false" text="Avro Viewer">-->
+
+<!--            </Tab>-->
+
+            <!-- Avro Generator Tab -->
+            <Tab closable="false" text="Avro Generator">
+
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

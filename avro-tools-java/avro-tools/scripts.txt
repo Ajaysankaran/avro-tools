@@ -7,3 +7,6 @@ jar --create --file avro-1.12.2-modular.jar --module-version 1.12.2 -C avro-cont
 javac --module-path libs -d avro-content src/module-info.java
 
 mvn javafx:jlink
+
+
+java --module-path /Users/ajaysankaran/Desktop/code/software/jdk-21.0.2.jdk/Contents/Home/lib --add-modules javafx.controls,javafx.fxml -jar avro-tools-1.0-SNAPSHOT.jar

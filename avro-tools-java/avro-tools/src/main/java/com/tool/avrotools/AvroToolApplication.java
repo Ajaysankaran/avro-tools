@@ -10,9 +10,9 @@ import java.io.IOException;
 public class AvroToolApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(AvroToolApplication.class.getResource("table-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AvroToolApplication.class.getResource("home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 500);
-        stage.setTitle("Hello!");
+        stage.setTitle("Avro Tools");
         stage.setScene(scene);
         stage.show();
     }
